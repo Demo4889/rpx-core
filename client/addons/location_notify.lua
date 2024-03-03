@@ -102,9 +102,9 @@ local CurrentZone = false
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(3000)
-        local x, y, z = table.unpack(GetEntityCoords(PlayerPedId()))        
+        local x, y, z = table.unpack(GetEntityCoords(PlayerPedId()))
         local zone = nil
-    
+
         local tempstate = Citizen.InvokeNative(0x43AD8FC02B429D33, x, y, z, 0)
         if tempstate then
             zone = tempstate
@@ -117,7 +117,7 @@ Citizen.CreateThread(function()
 
         local tempprint = Citizen.InvokeNative(0x43AD8FC02B429D33, x, y, z, 12)
         if tempprint then
-           zone = tempprint
+            zone = tempprint
         end
 
         local tempdistrict = Citizen.InvokeNative(0x43AD8FC02B429D33, x, y, z, 10)
@@ -137,10 +137,10 @@ Citizen.CreateThread(function()
 
             local time = getIGTime()
             local temp = getIGTemp()
-      
+
             if zone and LocalPlayer.state.isLoggedIn then
-               print(zone)
-               exports[GetCurrentResourceName()]:DisplayTopCenterNotification('~COLOR_BLUE~'.. time ..  temp, zone, 5000)
+                print(zone)
+                exports[GetCurrentResourceName()]:DisplayTopCenterNotification('~COLOR_BLUE~'.. time ..  temp, zone, 5000)
             end
         end
     end

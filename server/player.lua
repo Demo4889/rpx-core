@@ -36,16 +36,16 @@ CreatePlayer = function(src, dbdata) -- For some reason, this function doesn't s
     self.license = GetPlayerIdentifierByType(self.source, "license")
     self.name = GetPlayerName(self.source)
     self.citizenid = dbdata.citizenid or RPX.Player.GenerateCitizenId()
-    self.permissiongroup = RPX.Permissions.GetPermissionGroup(self.source)
+    self.permissiongroup = RPX.Permissions.GetPermissionGroup(self.source) or "user"
     self.slot = dbdata.slot or 1 -- Default slot
 
     self.charinfo = dbdata.charinfo or {}
-    self.charinfo.firstname = self.charinfo.firstname or "John" -- Default name
-    self.charinfo.lastname = self.charinfo.lastname or "Doe" -- Default name
+    self.charinfo.firstname = self.charinfo.firstname or "John" -- Default first name
+    self.charinfo.lastname = self.charinfo.lastname or "Doe" -- Default last name
     self.charinfo.fullname = ("%s %s"):format(self.charinfo.firstname, self.charinfo.lastname)
-    self.charinfo.age = self.charinfo.age or 18 -- 18 is the default age
-    self.charinfo.gender = self.charinfo.gender or 1 -- 1 = Male, 0 = Female
-    self.charinfo.height = self.charinfo.height or 178 -- 178cm is the default height
+    self.charinfo.age = self.charinfo.age or Internal_Config.Player.DefaultAge -- 18 is the default age
+    self.charinfo.gender = self.charinfo.gender or Internal_Config.Player.DefaultGender -- 1 = Male, 0 = Female
+    self.charinfo.height = self.charinfo.height or Internal_Config.Player.DefaultHeight -- 60in is the default height
 
     self.skin = dbdata.skin or {}
     self.clothes = dbdata.clothes or {}

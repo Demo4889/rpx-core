@@ -8,73 +8,56 @@ Citizen.CreateThread(function()
         local interior = GetInteriorAtCoords(-308.88, 777.37, 118.77)
         local isValid = IsValidInterior(interior)
         if isValid then
-            if IsInteriorEntitySetActive(interior, "val_bank_front_windows") then
-                --("Valentine Bank Interior Already Active")
-            else
+            if not IsInteriorEntitySetActive(interior, "val_bank_front_windows") then
                 ActivateInteriorEntitySet(interior, "val_bank_int_curtainsopen")
                 ActivateInteriorEntitySet(interior, "val_bank_front_windows")
-                --("Valentine Bank Interior Activated")
             end
         end
 
         local interior = GetInteriorAtCoords(-310.0119, 802.9316, 117.9846)
         local isValid = IsValidInterior(interior)
         if isValid then
-            if IsInteriorEntitySetActive(interior, "front_windows") then
-                --("Valentine Saloon Interior Already Active")
-            else
+            if not IsInteriorEntitySetActive(interior, "front_windows") then
                 ActivateInteriorEntitySet(interior, "front_windows")
                 ActivateInteriorEntitySet(interior, "val_saloon_br03_bed")
                 ActivateInteriorEntitySet(interior, "6_chair_poker_set")
-                --("Valentine Saloon Interior Activated")
             end
         end
 
         local interior = GetInteriorAtCoords(-273.4513, 811.3408, 118.38)
         local isValid = IsValidInterior(interior)
         if isValid then
-            if IsInteriorEntitySetActive(interior, "val_jail_int_walla") then
-                --("Valentine Jail Interior Already Active")
-            else
+            if not IsInteriorEntitySetActive(interior, "val_jail_int_walla") then
                 ActivateInteriorEntitySet(interior, "val_jail_int_walla")
                 ActivateInteriorEntitySet(interior, "val_jail_int_wallb")
-                --("Valentine Jail Interior Activated")
             end
         end
 
         local interior = GetInteriorAtCoords(323.0087, 801.0296, 116.8817)
         local isValid = IsValidInterior(interior)
         if isValid then
-            if IsInteriorEntitySetActive(interior, "val_genstore_night_light") then
-                --("Valentine General Store Nightlight Activated")
-            else
+            if not IsInteriorEntitySetActive(interior, "val_genstore_night_light") then
                 ActivateInteriorEntitySet(interior, "val_genstore_night_light")
-                --("Valentine General Store Nightlight Activated")
             end
         end
 
         local interior = GetInteriorAtCoords(3287.9997558594,-1312.0001220703,44.0)
         local isValid = IsValidInterior(interior)
         if isValid then
-            if IsInteriorEntitySetActive(interior, "korrigan_props_default") and IsInteriorEntitySetActive(interior, "korrigan_props_poker") then
-                --("Riverboat Interior Already Active")
-            else
+            if not IsInteriorEntitySetActive(interior, "korrigan_props_default") and not IsInteriorEntitySetActive(interior, "korrigan_props_poker") then
                 ActivateInteriorEntitySet(interior, "korrigan_props_default")
-                --("Riverboat Interior Activated")
+                ActivateInteriorEntitySet(interior, "korrigan_props_poker")
             end
         end
 
         local interior = GetInteriorAtCoords(-1643.893, -1358.232, 86.4541)
         local isValid = IsValidInterior(interior)
         if isValid then
-            if IsInteriorEntitySetActive(interior, "bee_01_house_fireplace_on") then
-                --("Beechers Interior Already Active")
-            else
+            if not IsInteriorEntitySetActive(interior, "bee_01_house_fireplace_on") then
                 ActivateInteriorEntitySet(interior, "bee_01_masterBR_bed01")
                 ActivateInteriorEntitySet(interior, "Beechers_decorated_after_Abigail3")
                 ActivateInteriorEntitySet(interior, "IntGrp_livingrm_furniture_basic")
                 ActivateInteriorEntitySet(interior, "bee_01_house_fireplace_on")
-                --("Beechers Interior Activated")
             end
         end
 
@@ -86,7 +69,7 @@ Citizen.CreateThread(function()
                 ActivateInteriorEntitySet(interior, "bronte_glass_unbreakable")
             end
         end
-    
+
         local interior = GetInteriorAtCoords(1006.364, -1766.812, 46.5922)
         local isValid = IsValidInterior(interior)
         if isValid then
@@ -99,138 +82,230 @@ Citizen.CreateThread(function()
         local interior = GetInteriorAtCoords(2643.708984375,-1293.3395996094,51.24600982666)
         local isValid = IsValidInterior(interior)
         if isValid then
-            if IsInteriorEntitySetActive(interior, "new_com_bank_int_des") then
-                --("St Denis Bank Interior Already Active")
-            else
+            if not IsInteriorEntitySetActive(interior, "new_com_bank_int_des") then
                 ActivateInteriorEntitySet(interior, "new_com_bank_int_des") 
-                --("St Denis Bank Interior Activated")
             end
         end
 
         local interior = GetInteriorAtCoords(1288.9132080078,-1303.3087158203,77.699859619141)
         local isValid = IsValidInterior(interior)
         if isValid then
-            if IsInteriorEntitySetActive(interior, "rhobank_int_walla") then
-                --("Rhodes Vault Interior Already Active")
-            else
+            if not IsInteriorEntitySetActive(interior, "rhobank_int_walla") then
                 ActivateInteriorEntitySet(interior, "rhobank_int_walla") 
-                --("Rhodes Bank Vault Interior Activated")
             end
         end
 
         local interior = GetInteriorAtCoords(1342.3599853516,-1374.6173095703,81.0)
         local isValid = IsValidInterior(interior)
         if isValid then
-            if IsInteriorEntitySetActive(interior, "rho_sal_tables01") then
-                --("Rhodes Saloon Interior Already Active")
-            else
+            if not IsInteriorEntitySetActive(interior, "rho_sal_tables01") then
                 ActivateInteriorEntitySet(interior, "rho_sal_tables01")
-                --("Rhodes Saloon Interior Activated")
             end
         end
-        
+
         local interior = GetInteriorAtCoords(777.28698730469,846.7998046875,117.20547485352)
         local isValid = IsValidInterior(interior)
         if isValid then
-            if IsInteriorEntitySetActive(interior, "_car_house_int_before_ransack") and IsInteriorEntitySetActive(interior, "_car_house_int_day") then
-                --("Interior Already Active")
-            else
+            if not IsInteriorEntitySetActive(interior, "_car_house_int_before_ransack") and not IsInteriorEntitySetActive(interior, "_car_house_int_day") then
                 ActivateInteriorEntitySet(interior, "_car_house_int_before_ransack")
                 ActivateInteriorEntitySet(interior, "_car_house_int_day")
-                --("Interior Activated")
             end
         end
-        
+
         local interior = GetInteriorAtCoords(-2177.0424804688,718.88171386719,120.86156463623)
         local isValid = IsValidInterior(interior)
         if isValid then
-            if IsInteriorEntitySetActive(interior, "han_int_tables_upright") then
-                --("Interior Already Active")
-            else
+            if not IsInteriorEntitySetActive(interior, "han_int_tables_upright") then
                 ActivateInteriorEntitySet(interior, "han_int_tables_upright")
-                --("Interior Activated")
             end
         end
-        
+
         local interior = GetInteriorAtCoords(1319.0007324219,-2281.0004882813,51.024421691895)
         local isValid = IsValidInterior(interior)
         if isValid then
-            if IsInteriorEntitySetActive(interior, "cat_house_propset") and IsInteriorEntitySetActive(interior, "cat_house_lights_ON") then
-                --("Interior Already Active")
-            else
+            if not IsInteriorEntitySetActive(interior, "cat_house_propset") and not IsInteriorEntitySetActive(interior, "cat_house_lights_ON") then
                 ActivateInteriorEntitySet(interior, "cat_house_propset")
                 ActivateInteriorEntitySet(interior, "cat_house_lights_ON")
-                --("Interior Activated")
             end
         end
-        
+
         local interior = GetInteriorAtCoords(-817.17687988281,354.38427734375,96.366539001465)
         local isValid = IsValidInterior(interior)
         if isValid then
-            if IsInteriorEntitySetActive(interior, "IntGroup_Downes_before_move") then
-                --("Interior Already Active")
-            else
+            if not IsInteriorEntitySetActive(interior, "IntGroup_Downes_before_move") then
                 ActivateInteriorEntitySet(interior, "IntGroup_Downes_before_move")
-                --("Interior Activated")
             end
         end
-        
+
         local interior = GetInteriorAtCoords(1786.8262939453,-85.348686218262,55.937133789063)
         local isValid = IsValidInterior(interior)
         if isValid then
-            if IsInteriorEntitySetActive(interior, "clean_abe") then
-                --("Interior Already Active")
-            else
+            if not IsInteriorEntitySetActive(interior, "clean_abe") then
                 ActivateInteriorEntitySet(interior, "clean_abe")
-                --("Interior Activated")
             end
         end
-        
+
         local interior = GetInteriorAtCoords(-443.90466308594,497.06292724609,97.230682373047)
         local isValid = IsValidInterior(interior)
         if isValid then
-            if IsInteriorEntitySetActive(interior, "cas_housewares") then
-                --("Interior Already Active")
-            else
+            if not IsInteriorEntitySetActive(interior, "cas_housewares") then
                 ActivateInteriorEntitySet(interior, "cas_housewares")
-                --("Interior Activated")
             end
         end
-        
+
         local interior = GetInteriorAtCoords(1134.5697021484,-979.48291015625,69.552551269531)
         local isValid = IsValidInterior(interior)
         if isValid then
-            if IsInteriorEntitySetActive(interior, "LT_murder_before") then
-                --("Interior Already Active")
-            else
+            if not IsInteriorEntitySetActive(interior, "LT_murder_before") then
                 ActivateInteriorEntitySet(interior, "LT_murder_before")
-                --("Interior Activated")
             end
         end
-        
+
         local interior = GetInteriorAtCoords(2698.0,-1200.0,57.0)
         local isValid = IsValidInterior(interior)
         if isValid then
-            if IsInteriorEntitySetActive(interior, "new_forMyArt_gallery") and IsInteriorEntitySetActive(interior, "new_forMyArt_paintings") then
-                --("Interior Already Active")
-            else
+            if not IsInteriorEntitySetActive(interior, "new_forMyArt_gallery") and not IsInteriorEntitySetActive(interior, "new_forMyArt_paintings") then
                 ActivateInteriorEntitySet(interior, "new_forMyArt_gallery")
                 ActivateInteriorEntitySet(interior, "new_forMyArt_paintings")
-                --("Interior Activated")
             end
         end
-        
+
         local interior = GetInteriorAtCoords(1897.0,-1863.0,44.000003814697)
         local isValid = IsValidInterior(interior)
         if isValid then
-            if IsInteriorEntitySetActive(interior, "shb_p_mansion_01") then
-                --("Interior Already Active")
-            else
+            if not IsInteriorEntitySetActive(interior, "shb_p_mansion_01") then
                 ActivateInteriorEntitySet(interior, "shb_p_mansion_01")
-                --("Interior Activated")
             end
         end
-        
+
+        local interior = GetInteriorAtCoords(1327.960, -1291.789, 77.025) -- Rhodes General Store
+        local isValid = IsValidInterior(interior)
+        if isValid then
+            if not IsInteriorEntitySetActive(interior, "_FIN2_EXT_P19_FRAMES_ON") then
+                ActivateInteriorEntitySet(interior, "_FIN2_EXT_P19_FRAMES_ON")
+                ActivateInteriorEntitySet(interior, "_p_apple01x_dressing")
+                ActivateInteriorEntitySet(interior, "_p_apple01x_group")
+                ActivateInteriorEntitySet(interior, "_p_bread06x_dressing")
+                ActivateInteriorEntitySet(interior, "_p_bread06x_group")
+                ActivateInteriorEntitySet(interior, "_p_cigar02x_dressing")
+                ActivateInteriorEntitySet(interior, "_p_cigar02x_group")
+                ActivateInteriorEntitySet(interior, "_p_cigarettebox01x_dressing")
+                ActivateInteriorEntitySet(interior, "_p_cigarettebox01x_group")
+                ActivateInteriorEntitySet(interior, "_p_corn02x_dressing")
+                ActivateInteriorEntitySet(interior, "_p_corn02x_group")
+                ActivateInteriorEntitySet(interior, "_p_tin_pomade01x_dressing")
+                ActivateInteriorEntitySet(interior, "_p_tin_pomade01x_group")
+                ActivateInteriorEntitySet(interior, "_s_beardTonic01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_beardTonic01x_group")
+                ActivateInteriorEntitySet(interior, "_s_biscuits01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_biscuits01x_group")
+                ActivateInteriorEntitySet(interior, "_s_brandy01x_group")
+                ActivateInteriorEntitySet(interior, "_s_candyBag01x_red_group")
+                ActivateInteriorEntitySet(interior, "_s_canPeas01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_canPeas01x_group")
+                ActivateInteriorEntitySet(interior, "_s_canPineapple01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_canPineapple01x_group")
+                ActivateInteriorEntitySet(interior, "_s_canStrawberries01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_canStrawberries01x_group")
+                ActivateInteriorEntitySet(interior, "_s_cheeseWedge1x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_cheeseWedge1x_group")
+                ActivateInteriorEntitySet(interior, "_s_chocolateBar02x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_chocolateBar02x_group")
+                ActivateInteriorEntitySet(interior, "_s_coffeeTin01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_coffeeTin01x_group")
+                ActivateInteriorEntitySet(interior, "_s_cornedBeef01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_cornedBeef01x_group")
+                ActivateInteriorEntitySet(interior, "_s_inv_horsePills01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_inv_horsePills01x_group")
+                ActivateInteriorEntitySet(interior, "_s_inv_rum01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_inv_rum01x_group")
+                ActivateInteriorEntitySet(interior, "_s_inv_tabacco01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_inv_tabacco01x_group")
+                ActivateInteriorEntitySet(interior, "_s_inv_whiskey01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_inv_whiskey01x_group")
+                ActivateInteriorEntitySet(interior, "_s_oatcakes01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_oatcakes01x_group")
+                ActivateInteriorEntitySet(interior, "_s_peach01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_peach01x_group")
+                ActivateInteriorEntitySet(interior, "_s_saltedbeef01x_group")
+                ActivateInteriorEntitySet(interior, "_s_saltedbeef02x_group")
+            end
+        end
+
+        local interior = GetInteriorAtCoords(-398.193, 1725.221, 216.431) -- Chez Porter Cabin
+        local isValid = IsValidInterior(interior)
+        if isValid then
+            if not IsInteriorEntitySetActive(interior, "che_cabin_int_roof_intact") then
+                ActivateInteriorEntitySet(interior, "che_cabin_int_roof_intact")
+                ActivateInteriorEntitySet(interior, "che_maincabin_occupied")
+            end
+        end
+
+        local interior = GetInteriorAtCoords(vec3(-5489.375, -2939.493, -0.402)) -- Tumbleweed General Store
+        local isValid = IsValidInterior(interior)
+        if isValid then
+            if not IsInteriorEntitySetActive(interior, "_saltedmeats_dressing") then
+                ActivateInteriorEntitySet(interior, "_p_apple01x_dressing")
+                ActivateInteriorEntitySet(interior, "_p_apple01x_group")
+                ActivateInteriorEntitySet(interior, "_p_cigarettebox01x_dressing")
+                ActivateInteriorEntitySet(interior, "_p_cigarettebox01x_group")
+                ActivateInteriorEntitySet(interior, "_p_corn02x_dressing")
+                ActivateInteriorEntitySet(interior, "_p_corn02x_group")
+                ActivateInteriorEntitySet(interior, "_p_tin_pomade01x_dressing")
+                ActivateInteriorEntitySet(interior, "_p_tin_pomade01x_group")
+                ActivateInteriorEntitySet(interior, "_p_tin_soap01x_dressing")
+                ActivateInteriorEntitySet(interior, "_p_tin_soap01x_group")
+                ActivateInteriorEntitySet(interior, "_saltedmeats_dressing")
+                ActivateInteriorEntitySet(interior, "_s_canCorn01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_canCorn01x_group")
+                ActivateInteriorEntitySet(interior, "_s_canPeas01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_canPeas01x_group")
+                ActivateInteriorEntitySet(interior, "_s_canStrawberries01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_canStrawberries01x_group")
+                ActivateInteriorEntitySet(interior, "_s_coffeeTin01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_coffeeTin01x_group")
+                ActivateInteriorEntitySet(interior, "_s_gunOil01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_gunOil01x_group")
+                ActivateInteriorEntitySet(interior, "_s_inv_baitHerb01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_inv_baitherb01x_group")
+                ActivateInteriorEntitySet(interior, "_s_inv_baitMeat01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_inv_baitmeat01x_group")
+                ActivateInteriorEntitySet(interior, "_s_inv_gin01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_inv_gin01x_group")
+                ActivateInteriorEntitySet(interior, "_s_inv_tabacco01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_inv_tabacco01x_group")
+                ActivateInteriorEntitySet(interior, "_s_inv_whiskey01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_inv_whiskey01x_group")
+                ActivateInteriorEntitySet(interior, "_s_oatcakes01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_oatcakes01x_group")
+                ActivateInteriorEntitySet(interior, "_s_saltedbeef01x_group")
+                ActivateInteriorEntitySet(interior, "_s_saltedbeef02x_group")
+            end
+        end
+
+        local interior = GetInteriorAtCoords(vec3(1625.681, -364.560, 75.897)) -- Lonnie's Shack
+        local isValid = IsValidInterior(interior)
+        if isValid then
+            if not IsInteriorEntitySetActive(interior, "inn_lonnie_firelit") then
+                ActivateInteriorEntitySet(interior, "inn_lonnie_firelit")
+            end
+        end
+
+        local interior = GetInteriorAtCoords(vec3(-285.066, 806.314, 119.386)) -- Valentine Doctor
+        local isValid = IsValidInterior(interior)
+        if isValid then
+            if not IsInteriorEntitySetActive(interior, "_s_candyBag01x_red_group") then
+                ActivateInteriorEntitySet(interior, "_s_candyBag01x_red_group")
+                ActivateInteriorEntitySet(interior, "_s_inv_CocaineGum01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_inv_CocaineGum01x_group")
+                ActivateInteriorEntitySet(interior, "_s_inv_medicine01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_inv_medicine01x_group")
+                ActivateInteriorEntitySet(interior, "_s_inv_tabacco01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_inv_tabacco01x_group")
+                ActivateInteriorEntitySet(interior, "_s_inv_tonic01x_dressing")
+                ActivateInteriorEntitySet(interior, "_s_inv_tonic01x_group")
+            end
+        end
         isLoaded = true
     end
 end)

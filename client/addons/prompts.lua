@@ -31,7 +31,7 @@ local function createPromptGroup(group, label, coords, prompts)
 end
 
 local function getPrompt()
-    if Prompts then 
+    if Prompts then
     return Prompts
     end
 end

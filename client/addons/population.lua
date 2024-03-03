@@ -31,7 +31,7 @@ CreateThread(function()
             SetParkedVehicleDensityMultiplierThisFrame(GlobalState.DensityMultipliers.parkedVehicles)
             SetRandomVehicleDensityMultiplierThisFrame(GlobalState.DensityMultipliers.randomVehicles)
             SetVehicleDensityMultiplierThisFrame(GlobalState.DensityMultipliers.vehicles)
-            
+
             Wait(0)
         else
             Wait(2000)

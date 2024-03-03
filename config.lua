@@ -1,5 +1,5 @@
 IC = {}
-IC.MaxPlayers                           = GetConvarInt('sv_maxClients', 48)
+IC.MaxPlayers                           = GetConvarInt('sv_maxClients', 128)
 IC.DefaultPosition                      = vector3(0.0,0.0,0.0)
 IC.CitizenIDLength                      = 8
 IC.DeploymentType                       = "dev"         -- dev, prod
@@ -9,8 +9,11 @@ IC.DeploymentType                       = "dev"         -- dev, prod
 IC.MaxCharactersPerPlayer               = 4
 
 IC.Player = {}
-IC.Player.StartingCash                  = 100
+IC.Player.StartingCash                  = 50
 IC.Player.StartingBank                  = 100
+IC.Player.DefaultAge                    = 18            -- Default DefaultAge
+IC.Player.DefaultGender                 = 1             -- 1 = Male, 0 = Female
+IC.Player.DefaultHeight                 = 60            -- Can be between 48-84 inches
 IC.Player.MaxHealthCore                 = 5             -- 50% max health core
 IC.Player.MaxStaminaCore                = 5             -- 50% max stamina core
 IC.Player.UpdateRate                    = 5             -- Minutes
@@ -23,7 +26,7 @@ IC.Game = {}                                            -- These are game modifi
 IC.Game.EnablePVP                       = true          -- Whether or not to enable PVP/friendly fire.
 IC.Game.AnonymousNames                  = true          -- Set to true to make all players have anonymous target names ["Stranger (PlayerID)"]
 IC.Game.DisableChallengeNotifications   = true          -- Set to true to disable challenge notifications (base game)
-IC.Game.MapCrossName                    = "RPX Core"    -- Set the BLIP_NAME when a player is hovered over a non-existant blip on the map (base game)
+IC.Game.MapCrossName                    = "No Blip Name"    -- Set the BLIP_NAME when a player is hovered over a non-existant blip on the map (base game)
 IC.Game.DisableLootPrompts              = true          -- Set to true to disable random loot boxes/prompts (base game)
 IC.Game.DisableAimAssist                = true          -- Set to true to disable aim assist on controllers (unfair for RP servers)
 IC.Game.RevealMap                       = true          -- Set to true to disable the fog of war and reveal the entire game map.
