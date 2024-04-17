@@ -84,6 +84,7 @@ RegisterCommand("feedme", function(source, args, rawCommand)
         Player.SetMetaData("hunger", 100)
         Player.SetMetaData("thirst", 100)
         Player.SetMetaData("stress", 0)
+        Player.SetMetaData("drunk", 0)
         lib.notify(source, { title = "Fed and watered.", type = "success" })
     else
         lib.notify(source, { title = "Insufficient permissions.", type = "error" })

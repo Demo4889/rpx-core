@@ -116,6 +116,26 @@ RegisterNetEvent('RPX:SetStress', function(amount)
     end
 end)
 
+RegisterNetEvent('RPX:SetDrunk', function(amount)
+    local src = source
+    local thePlayer = RPX.Players[src]
+    if thePlayer then
+        local oldDrunk = thePlayer.metadata['drunk']
+        local newDrunk = amount
+        if newDrunk >= 100 then
+            newDrunk = 100
+        end
+        thePlayer.SetMetaData('drunk', tonumber(string.format("%.2f", newDrunk)))
+
+        RPX.Player.Save(src)
+
+        if GlobalState.DeploymentType == "dev" then
+            print("RPX:SetDrunk for "..thePlayer.name.." ("..src..")")
+            print("Setting drunk from "..oldDrunk.." to "..newDrunk)
+        end
+    end
+end)
+
 -- txAdmin Server Shutting Down Event
 -- This event is triggered when txAdmin is about to restart or stop the server.
 AddEventHandler('txAdmin:events:serverShuttingDown', function(eventData)

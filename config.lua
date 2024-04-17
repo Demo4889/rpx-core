@@ -63,23 +63,10 @@ IC.Game.WeaponRecoils = {
     [3788682007]                        = 0.7,          -- weapon_sniperrifle_rollingblock
 }
 
-IC.Game.PopDensMultipliers                   = {}       -- These are the multipliers for the population density of the game.
-IC.Game.PopDensMultipliers.ambientPeds       = 1.0      -- 
-IC.Game.PopDensMultipliers.scenarioPeds      = 1.0      -- 
-IC.Game.PopDensMultipliers.vehicles          = 0.0      -- 
-IC.Game.PopDensMultipliers.parkedVehicles    = 1.0      -- 
-IC.Game.PopDensMultipliers.randomVehicles    = 1.0      -- 
-IC.Game.PopDensMultipliers.ambientAnimals    = 1.0      -- 
-IC.Game.PopDensMultipliers.ambientHumans     = 1.0      -- 
-IC.Game.PopDensMultipliers.scenarioAnimals   = 1.0      -- 
-IC.Game.PopDensMultipliers.scenarioHumans    = 1.0      --    
-
 -----------------------------------------------------------------------------------------
 -------------------------------------  Internal Config  ---------------------------------
 -----------------------------------------------------------------------------------------
 
-
-GlobalState.DensityMultipliers       = IC.Game.PopDensMultipliers  -- Push the pop density multipliers to the global state. Don't touch this!
 GlobalState.DeploymentType           = IC.DeploymentType           -- Push the framework's deployment type to the global state. Don't touch this!
 
 Internal_Config = IC

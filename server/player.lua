@@ -68,6 +68,7 @@ CreatePlayer = function(src, dbdata) -- For some reason, this function doesn't s
     if not self.metadata.thirst then self.metadata.thirst = 100 end
     if not self.metadata.hunger then self.metadata.hunger = 100 end
     if not self.metadata.stress then self.metadata.stress = 0 end
+    if not self.metadata.drunk then self.metadata.drunk = 0 end
     if not self.metadata.health then self.metadata.health = 100 end
     if not self.metadata.stamina then self.metadata.stamina = 100 end
 
