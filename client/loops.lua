@@ -48,6 +48,6 @@ end)
 function GetCurrentTemperature()
     local player = PlayerPedId()
     local coords = GetEntityCoords(player)
-    ShouldUseMetricTemperature()
+    getIGTemp()
     return math.floor(GetTemperatureAtCoords(coords.x, coords.y, coords.z))
 end

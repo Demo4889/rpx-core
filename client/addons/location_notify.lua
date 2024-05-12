@@ -68,26 +68,25 @@ local function getIGTime()
     return formatTime(hour) ..":" .. formatTime(GetClockMinutes()) .. ap
 end
 
-local function getIGTemp()
+function getIGTemp()
     -- Get Temperatures
-    local metric = ShouldUseMetricTemperature();
     local temperature
     local temperatureUnit
     local windSpeed
     local windSpeedUnit
     local x, y, z = table.unpack(GetEntityCoords(PlayerPedId()))
-    if metric then
-        temperature = math.floor(GetTemperatureAtCoords(x, y, z))
-        temperatureUnit = 'C'
-
-        windSpeed = math.floor(GetWindSpeed())
-        windSpeedUnit = 'kph'
-    else
+    if not Internal_Config.Game.MetricTemp then
         temperature = math.floor(GetTemperatureAtCoords(x, y, z) * 9/5 + 32)
         temperatureUnit = 'F'
 
         windSpeed = math.floor(GetWindSpeed() * 0.621371)
         windSpeedUnit = 'mph'
+    else
+        temperature = math.floor(GetTemperatureAtCoords(x, y, z))
+        temperatureUnit = 'C'
+
+        windSpeed = math.floor(GetWindSpeed())
+        windSpeedUnit = 'kph'
     end
 
     local wx, wy, wz = table.unpack(GetWindDirection())

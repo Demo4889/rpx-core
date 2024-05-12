@@ -32,6 +32,7 @@ IC.Game.DisableAimAssist                = true          -- Set to true to disabl
 IC.Game.RevealMap                       = true          -- Set to true to disable the fog of war and reveal the entire game map.
 IC.Game.HideHUD                         = true          -- Set to true to hide the main game HUD. (Great if you have a custom HUD)
 IC.Game.EnableEagleEye                  = false         -- Set to true to enable eagle eye (base game)
+IC.Game.MetricTemp                      = false         -- Set to true for Celcius, false for Farenheit
 
 -----------------------------------------------------------------------------------------
 -------------------------------------  Internal Config  ---------------------------------
