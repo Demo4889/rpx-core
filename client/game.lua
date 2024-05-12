@@ -115,34 +115,6 @@ CreateThread(function()
         end
     end
 end)
-
-if Internal_Config.Game.WeaponRecoilSystem then
-    Citizen.CreateThread(function()
-        while true do
-            local ped = PlayerPedId()
-            if IsPedShooting(ped) then
-                local _,wep = GetCurrentPedWeapon(ped)
-                if Internal_Config.Game.WeaponRecoils[wep] and Internal_Config.Game.WeaponRecoils[wep] ~= 0 then
-                    TimeValue = 0
-                    repeat
-                        Wait(0)
-                        GameplayCamPitch = GetGameplayCamRelativePitch()
-                        if Internal_Config.Game.WeaponRecoils[wep] > 0.1 then
-                            SetGameplayCamRelativePitch(GameplayCamPitch+0.6, 1.2)
-                            TimeValue = TimeValue+0.6
-                        else
-                            SetGameplayCamRelativePitch(GameplayCamPitch+0.016, 0.333)
-                            TimeValue = TimeValue+0.1
-                        end
-                    until TimeValue >= Internal_Config.Game.WeaponRecoils[wep]
-                end
-            end
-            Wait(0)
-        end
-    end)
-end
-
-
 --
 -- Enable PVP
 --
@@ -153,7 +125,6 @@ CreateThread(function()
             Citizen.InvokeNative(0xF808475FA571D823, true) --enable friendly fire
             NetworkSetFriendlyFireOption(true)
             SetRelationshipBetweenGroups(5, `PLAYER`, `PLAYER`)
-            print("[RPX] PVP Enabled")
             return
         end
     end

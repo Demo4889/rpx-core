@@ -3,10 +3,10 @@ AddEventHandler("playerDropped", function(reason)
     local Player = RPX.Players[src]
     if Player then
         RPX.Player.Save(src)
-        RPX.Logs.AddLog("framework", "Player " .. RPX.Players[src].name .. " (" .. src .. ") has disconnected from the server. (Reason: " .. reason .. ")")
+        TriggerEvent('rpx-log:server:CreateLog', "framework", "Player " .. RPX.Players[src].name .. " (" .. src .. ") has disconnected from the server. (Reason: " .. reason .. ")")
         RPX.Players[src] = nil
     else
-        RPX.Logs.AddLog("framework", "Player ID " .. src .. " has disconnected from the server (not logged in - reason: " .. reason .. ")")
+        TriggerEvent('rpx-log:server:CreateLog', "framework", "Player ID " .. src .. " has disconnected from the server (not logged in - reason: " .. reason .. ")")
     end
 end)
 

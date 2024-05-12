@@ -172,7 +172,7 @@ RPX.Player.SelectCharacter = function(src, citizenid)
 
     RPX.Players[src] = CreatePlayer(src, dbdata)
 
-    RPX.Logs.AddLog("framework", 
+    TriggerEvent('rpx-log:server:CreateLog', "framework", 
         ("Player %s (%s) has logged into their character %s %s (%s)"):format(RPX.Players[src].name, src, dbdata.charinfo.firstname, dbdata.charinfo.lastname, dbdata.citizenid)
     )
     
@@ -213,7 +213,7 @@ RPX.Player.CreateCharacter = function(src, info, slot)
         json.encode(PlayerInfo.position)
     })
 
-    RPX.Logs.AddLog("framework", 
+    TriggerEvent('rpx-log:server:CreateLog', "framework", 
         ("Player %s (%s) has created character %s %s (%s)"):format(PlayerInfo.name, src, info.firstname, info.lastname, PlayerInfo.citizenid)
     )
 
@@ -225,6 +225,11 @@ RPX.Player.CreateCharacter = function(src, info, slot)
 
     TriggerClientEvent("rpx-appearance:client:newPlayer", src)
 end
+local playertables = {
+    { table = 'characters' },
+    { table = 'horses' },
+    { table = 'outfits' },
+}
 
 --- Delete a character from the database.
 ---@param src string | number The player's source.
@@ -232,10 +237,21 @@ end
 RPX.Player.DeleteCharacter = function(src, citizenid)
     ---@cast src string
     local license = GetPlayerIdentifierByType(src, "license")
+    local tableCount = #playertables
+    local queries = table.create(tableCount, 0)
+
+    for i = 1, tableCount do
+        local v = playertables[i]
+        queries[i] = { query = query:format(v.table), values = { citizenid }}
+    end
+    MySQL.transaction(queries, function(result2)
+        if result2 then
+            TriggerEvent('rpx-log:server:CreateLog', "framework", ("Player %s (%s) has deleted character ID %s"):format(GetPlayerName(src), src, citizenid))
+        end
+    end)
+
+
     MySQL.execute('DELETE FROM characters WHERE license = ? AND citizenid = ?', { license, citizenid })
-    RPX.Logs.AddLog("framework", 
-        ("Player %s (%s) has deleted character ID %s"):format(GetPlayerName(src), src, citizenid)
-    )
 end
 
 ---Saves the player's data to the database.

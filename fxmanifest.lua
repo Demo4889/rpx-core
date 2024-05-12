@@ -21,7 +21,6 @@ shared_scripts {
     'shared/debug.lua',
     'shared/jobs.lua',
     'shared/blips.lua',
-    'shared/items.lua',
 }
 
 server_scripts {
