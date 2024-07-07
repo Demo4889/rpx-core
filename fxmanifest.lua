@@ -54,6 +54,7 @@ ui_page {
 }
 
 files {
+    'locales/*.json',
     'html/ui.html',
     'client/data/*.lua',
 }
