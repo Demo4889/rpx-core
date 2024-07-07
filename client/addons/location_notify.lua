@@ -43,6 +43,8 @@ local function getzoneData(hash)
     end
 end
 
+exports('GetZoneData', getzoneData)
+
 local function formatTime(time) 
     if time < 10 then
         time = '0'..time

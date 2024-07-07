@@ -308,7 +308,6 @@ RegisterCommand("setjob", function(source, args, rawCommand)
 
                     Target.SetJob(job, rank)
 
-                    TriggerClientEvent("redem_roleplay:JobChange", tonumber(args[1]) --[[@as number]], job)
                     lib.notify(source, { title = "Set "..Target.charinfo.fullname.."'s job to "..job.." (Rank "..rank..")", type = "success" })
                 else
                     lib.notify(source, { title = "Player not found or isn't logged in.", type = "error" })
@@ -334,7 +333,6 @@ RegisterCommand("setgang", function(source, args, rawCommand)
 
                     Target.SetGang(gang, rank)
 
-                    TriggerClientEvent("redem_roleplay:GangChange", tonumber(args[1]) --[[@as number]], gang)
                     lib.notify(source, { title = "Set "..Target.charinfo.fullname.."'s gang to "..gang.." (Rank "..rank..")", type = "success" })
                 else
                     lib.notify(source, { title = "Player not found or isn't logged in.", type = "error" })
