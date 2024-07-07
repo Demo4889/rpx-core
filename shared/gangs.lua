@@ -12,7 +12,7 @@ InternalShared.Gangs = {
             [1] = {
                 Label = "Boss",
                 isBoss = true
-            }
+            },
             [2] = {
                 name = "Rank 2",
             },

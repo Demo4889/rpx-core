@@ -19,6 +19,7 @@ shared_scripts {
     '@ox_lib/init.lua',
     'config.lua',
     'shared/debug.lua',
+    'shared/gangs.lua',
     'shared/jobs.lua',
     'shared/blips.lua',
 }
